@@ -10,8 +10,9 @@ class Home extends Component{
 
     handleTabsChange = (e) => {
         e.preventDefault()
+        const answered = e.target.name === "answered" ? true : false
         this.setState(() => ({
-            answered: e.target.name === "answered" ? true : false
+            answered: answered
         }))
 
     }
@@ -28,7 +29,7 @@ class Home extends Component{
                 <ul className="">
                     {toBeDisplayed.map((id) => (
                         <li key={id}>
-                            <Question id={id} viewed={true}/>
+                            <Question id={id}/>
                         </li>
                     ))}
                 </ul>
